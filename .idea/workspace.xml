@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de8399f-e73d-4764-9faa-49d4147a3daa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/conf/odoo.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6de8399f-e73d-4764-9faa-49d4147a3daa" name="Changes" comment="Compleat Task 2 (Create table with needed columns)">
+      <change afterPath="$PROJECT_DIR$/tutorials/estate/security/ir.model.access.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/odoo" beforeDir="false" afterPath="$PROJECT_DIR$/odoo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/odoo/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/odoo/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/estate/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +33,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Odoo17.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/astanis/PythonProjects/Odoo17/conf"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Odoo17.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/astanis/PythonProjects/Odoo17/conf&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/conf" />
@@ -92,6 +92,28 @@
       <option name="presentableId" value="Default" />
       <updated>1723802777392</updated>
     </task>
+    <task id="LOCAL-00001" summary="Compleat Task 1 (Create and add new module)">
+      <option name="closed" value="true" />
+      <created>1724233221287</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1724233221287</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Compleat Task 2 (Create table with needed columns)">
+      <option name="closed" value="true" />
+      <created>1724326727827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724326727827</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Compleat Task 1 (Create and add new module)" />
+    <MESSAGE value="Compleat Task 2 (Create table with needed columns)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compleat Task 2 (Create table with needed columns)" />
   </component>
 </project>
