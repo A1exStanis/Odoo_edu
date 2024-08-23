@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_estate_root"
+    name="Estate Management"/>
+
+    <menuitem id="menu_estate_first_level"
+    name="Properties"
+    parent="menu_estate_root"/>
+
+    <menuitem id="menu_estate_properties_action"
+    name="Estate Properties"
+    parent="menu_estate_first_level"
+    action="action_estate_properties"/>
+
+</odoo>

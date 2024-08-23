@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de8399f-e73d-4764-9faa-49d4147a3daa" name="Changes" comment="Compleat Task 2 (Create table with needed columns)">
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/security/ir.model.access.csv" afterDir="false" />
+    <list default="true" id="6de8399f-e73d-4764-9faa-49d4147a3daa" name="Changes" comment="Complete Task 3 (Add security)">
+      <change afterPath="$PROJECT_DIR$/tutorials/estate/views/estate_menus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/estate/views/estate_property_views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/estate/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/estate/models/estate_property.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/models/estate_property.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,12 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1724326727827</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Complete Task 3 (Add security)">
+      <option name="closed" value="true" />
+      <created>1724331915263</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724331915264</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Compleat Task 1 (Create and add new module)" />
     <MESSAGE value="Compleat Task 2 (Create table with needed columns)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Compleat Task 2 (Create table with needed columns)" />
+    <MESSAGE value="Complete Task 3 (Add security)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Task 3 (Add security)" />
   </component>
 </project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_estate_properties" model="ir.actions.act_window">
+        <field name="name">Estate</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create
+            </p>
+        </field>
+    </record>
+
+</odoo>
