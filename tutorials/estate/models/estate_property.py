@@ -36,6 +36,11 @@ class EstateProperty(models.Model):
         default='new',
         required=True
     )
+    property_type_id = fields.Many2one('estate.property.type', string='Property Type')
+    seller_id = fields.Many2one('res.users', string='Seller', default=lambda self: self.env.user)
+    buyer_id = fields.Many2one('res.partner', string='Buyer')
+    tags_ids = fields.Many2many('estate.property.tag')
+    offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
 
     def _default_date_due(self):
         today = fields.Date.context_today(self)

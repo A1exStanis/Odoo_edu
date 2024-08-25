@@ -5,12 +5,26 @@
     name="Estate Management"/>
 
     <menuitem id="menu_estate_first_level"
-    name="Properties"
+    name="Advertisements"
     parent="menu_estate_root"/>
 
     <menuitem id="menu_estate_properties_action"
     name="Estate Properties"
     parent="menu_estate_first_level"
     action="action_estate_properties"/>
+
+    <menuitem id="menu_estate_settings_first_level"
+              name="Settings"
+              parent="menu_estate_root"/>
+
+    <menuitem id="menu_property_type_action"
+              name="Property Types"
+              parent="menu_estate_settings_first_level"
+              action="action_estate_types"/>
+
+    <menuitem id="menu_property_tag_action"
+              name="Property Tags"
+              parent="menu_estate_settings_first_level"
+              action="action_estate_tags"/>
 
 </odoo>
