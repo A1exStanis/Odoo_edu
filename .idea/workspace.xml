@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6de8399f-e73d-4764-9faa-49d4147a3daa" name="Changes" comment="Complete Task 3 (Add security)">
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/models/estate_property_offer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/models/estate_property_tag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/models/estate_property_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/views/estate_property_offer_views.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/views/property_tags_views.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/estate/views/property_types_views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/estate/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/estate/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/estate/models/estate_property.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/models/estate_property.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/estate/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/estate/views/estate_menus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/views/estate_menus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/estate/models/estate_property_offer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/models/estate_property_offer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/estate/views/estate_property_offer_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/views/estate_property_offer_views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/estate/views/estate_property_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/estate/views/estate_property_views.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
