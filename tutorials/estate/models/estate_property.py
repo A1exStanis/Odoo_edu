@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from dateutil.relativedelta import relativedelta
+from odoo.exceptions import UserError
 
 
 class EstateProperty(models.Model):
@@ -79,3 +80,13 @@ class EstateProperty(models.Model):
             'data_availability': self._default_date_due()
         })
         return super(EstateProperty, self).copy(default)
+
+    def action_cancel(self):
+        if self.state == 'sold':
+            raise UserError('Sold properties cannot be canceled ')
+        self.write({"state": 'canceled'})
+
+    def action_sold(self):
+        if self.state == 'canceled':
+            raise UserError('Canceled properties cannot be sold')
+        self.write({'state': 'sold'})

@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 from datetime import timedelta
 
 class EstatePropertyOffer(models.Model):
@@ -44,3 +45,20 @@ class EstatePropertyOffer(models.Model):
         })
         return super(EstatePropertyOffer, self).copy(default)
 
+    def action_accept(self):
+        if self.status == 'accepted':
+            raise UserError('This offer is already accepted.')
+        if self.status == 'refused':
+            raise UserError('Cannot accept a refused offer.')
+        self.write({'status': 'accepted'})
+        self.property_id.write({
+            'buyer_id': self.partner_id.id,
+            'selling_price': self.price
+        })
+
+    def action_refuse(self):
+        if self.status == 'refused':
+            raise UserError('This offer is already refused.')
+        if self.status == 'accepted':
+            raise UserError('Cannot refuse an accepted offer.')
+        self.write({'status': 'refused'})
