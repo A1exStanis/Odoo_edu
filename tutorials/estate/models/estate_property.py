@@ -7,6 +7,7 @@ from odoo.tools.float_utils import float_compare, float_is_zero
 class EstateProperty(models.Model):
     _name = 'estate.property'
     _description = 'Data for estate properties'
+    _order = 'id DESC'
 
     name = fields.Char('Title', required=True)
     description = fields.Text('Description')
@@ -52,7 +53,6 @@ class EstateProperty(models.Model):
         ('expected_price_positive', 'CHECK(expected_price > 0)', 'Expected price must be strictly positive'),
         ('selling_price_positive', 'CHECK(selling_price > 0)', 'Selling price must be positive')
     ]
-
 
     @api.constrains('selling_price', 'expected_price')
     def _check_price(self):
@@ -104,3 +104,9 @@ class EstateProperty(models.Model):
         if self.state == 'canceled':
             raise UserError('Canceled properties cannot be sold')
         self.write({'state': 'sold'})
+
+    def action_offer_receive(self):
+        self.write({'state': 'offer_receive'})
+
+    def action_offer_accepted(self):
+        self.write({'state': 'offer_accepted'})

@@ -5,6 +5,7 @@ from datetime import timedelta
 class EstatePropertyOffer(models.Model):
     _name = 'estate.property.offer'
     _description = 'Real Estate Property Offer'
+    _order = 'price DESC'
 
     price = fields.Float('Price')
     status = fields.Selection(
@@ -20,6 +21,8 @@ class EstatePropertyOffer(models.Model):
         compute='_compute_date_deadline',
         inverse='_inverse_date_deadline'
     )
+    property_type_id = fields.Many2one('estate.property.type', string='Property Type',
+                                       related='property_id.property_type_id', store=True)
 
     _sql_constraints = [
         ('price_positive', 'CHECK(price > 0)', 'Price must be strictly positive.')
@@ -56,6 +59,7 @@ class EstatePropertyOffer(models.Model):
             raise UserError('Cannot accept a refused offer.')
         self.write({'status': 'accepted'})
         self.property_id.write({
+            'state': 'offer_accepted',
             'buyer_id': self.partner_id.id,
             'selling_price': self.price
         })
