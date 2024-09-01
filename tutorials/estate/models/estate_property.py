@@ -54,6 +54,19 @@ class EstateProperty(models.Model):
         ('selling_price_positive', 'CHECK(selling_price > 0)', 'Selling price must be positive')
     ]
 
+    @api.model
+    def create(self, vals):
+        res = super(EstateProperty, self).create(vals)
+        if 'offer_ids' in vals and vals['offer_ids']:
+            res.state = 'offer_receive'
+        return res
+
+    @api.ondelete(at_uninstall=False)
+    def _check_ondelete(self):
+        for record in self:
+            if record.state not in ['new', 'canceled']:
+                raise UserError('Cannot delete property because it is not in a "New" or "Canceled" state.')
+
     @api.constrains('selling_price', 'expected_price')
     def _check_price(self):
         for record in self:

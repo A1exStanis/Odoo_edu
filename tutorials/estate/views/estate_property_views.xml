@@ -80,14 +80,14 @@
                         <page string="Offers">
                             <group>
                                 <field name="offer_ids" readonly="state in ['offer_accepted', 'sold', 'canceled']">
-                                    <tree>
+                                    <tree editable="bottom" decoration-danger="status=='refused'" decoration-success="status=='accepted'">
                                         <field name="price"/>
                                         <field name="partner_id"/>
                                         <field name="validity"/>
                                         <field name="date_deadline"/>
                                         <button name="action_accept" string="Accept" type="object" icon="fa-check" class="btn-primary" invisible="status in ['refused', 'accepted']"/>
                                         <button name="action_refuse" string="Refuse" type="object" icon="fa-times" class="btn-secondary" invisible="status in ['refused', 'accepted']"/>
-                                        <field name="status"/>
+                                        <field name="status" invisible="1"/>
                                     </tree>
                                 </field>
                             </group>
@@ -117,7 +117,7 @@
                 <field name="facades"/>
                 <filter string="Status" name="status_filter"
                         domain="[('state', 'in', ('new', 'offer_receive'))]"/>
-                <filter string="Available" name="available_filter" domain="[('state','=','new')]"/>
+                <filter string="Available" name="available_filter" domain="[('state','in',['new','offer_receive'])]"/>
             </search>
         </field>
     </record>

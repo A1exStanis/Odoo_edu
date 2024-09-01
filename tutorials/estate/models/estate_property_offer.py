@@ -28,6 +28,17 @@ class EstatePropertyOffer(models.Model):
         ('price_positive', 'CHECK(price > 0)', 'Price must be strictly positive.')
     ]
 
+    @api.model
+    def create(self, vals):
+        property_id = vals.get('property_id')
+        if property_id:
+            property_record = self.env['estate.property'].browse(property_id)
+            existing_offer = self.search([('property_id', '=', property_id)], limit=1)
+            if existing_offer and vals.get('price') < existing_offer.price:
+                raise UserError(f'The offer amount must be greater than or equal than {existing_offer.price}.')
+            property_record.state = 'offer_receive'
+        return super(EstatePropertyOffer, self).create(vals)
+
     @api.depends('create_date', 'validity')
     def _compute_date_deadline(self):
         for record in self:
