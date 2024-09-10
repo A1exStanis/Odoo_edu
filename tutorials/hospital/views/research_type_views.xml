@@ -1,0 +1,37 @@
+<odoo>
+
+    <record id="action_research_type" model="ir.actions.act_window">
+        <field name="name">Research Types</field>
+        <field name="res_model">research.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="view_research_type_tree" model="ir.ui.view">
+        <field name="name">research.type.tree</field>
+        <field name="model">research.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="research_directory_ids"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_research_type_form" model="ir.ui.view">
+        <field name="name">research.type.form</field>
+        <field name="model">research.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

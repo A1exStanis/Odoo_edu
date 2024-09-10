@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_hospital_diagnosis" model="ir.actions.act_window">
+        <field name="name">Diagnosis</field>
+        <field name="res_model">hospital.diagnosis</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create
+            </p>
+        </field>
+    </record>
+
+    <record id="view_hospital_diagnosis_tree" model="ir.ui.view">
+        <field name="name">hospital.diagnosis.tree</field>
+        <field name="model">hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <tree string="Diagnosis">
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="disease_id"/>
+                <field name="diagnosis_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hospital_patient_form" model="ir.ui.view">
+        <field name="name">hospital.diagnosis.form</field>
+        <field name="model">hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <form string="Hospital Patient">
+                <sheet>
+                    <group>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="disease_id" class="oe_inline"/>
+                            </h1>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="doctor_id" class="oe_inline"/>
+                        <field name="patient_id" class="oe_inline"/>
+                    </group>
+                    <group>
+                        <field name="treatment" class="oe_inline"/>
+                        <field name="diagnosis_date" class="oe_inline"/>
+                        <field name="mentor_comment" invisible="not doctor_id.is_intern"/>
+                    </group>
+                    <notebook>
+                    <page string="Researches">
+                        <field name="research_directory_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="sample_type_id"/>
+                                <field name="diagnosis_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

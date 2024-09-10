@@ -1,0 +1,38 @@
+<odoo>
+
+    <record id="action_specialty_type" model="ir.actions.act_window">
+        <field name="name">Specialty Types</field>
+        <field name="res_model">specialty.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create
+            </p>
+        </field>
+    </record>
+
+    <record id="view_specialty_type_tree" model="ir.ui.view">
+        <field name="name">specialty.type.tree</field>
+        <field name="model">specialty.type</field>
+        <field name="arch" type="xml">
+            <tree string="Specialty Types">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_specialty_type_form" model="ir.ui.view">
+        <field name="name">specialty.type.form</field>
+        <field name="model">specialty.type</field>
+        <field name="arch" type="xml">
+            <form string="Specialty Type">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_doctor_visit" model="ir.actions.act_window">
+        <field name="name">Doctor Visit</field>
+        <field name="res_model">doctor.visit</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new doctor visit record
+            </p>
+        </field>
+    </record>
+
+
+    <record id="view_doctor_visit_tree" model="ir.ui.view">
+        <field name="name">doctor.visit.tree</field>
+        <field name="model">doctor.visit</field>
+        <field name="arch" type="xml">
+            <tree string="Doctor Visit">
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="visit_date"/>
+                <field name="visit_time"/>
+                <field name="diagnosis_id"/>
+                <field name="appointment_confirmed"/>
+                <button name="action_confirm_visit" type="object" string="Mark as Completed"
+                        invisible="appointment_confirmed == True" class="oe_highlight"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_doctor_visit_form" model="ir.ui.view">
+        <field name="name">doctor.visit.form</field>
+        <field name="model">doctor.visit</field>
+        <field name="arch" type="xml">
+            <form string="Doctor Visit">
+                <sheet>
+                    <group>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="doctor_id" class="oe_inline"/>
+                            </h1>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="doctor_id" class="oe_inline"/>
+                        <field name="patient_id" class="oe_inline"/>
+                        <field name="visit_date" class="oe_inline"/>
+                        <field name="visit_time" class="oe_inline"/>
+                        <field name="diagnosis_id" class="oe_inline"/>
+                        <field name="recommendations" class="oe_inline"/>
+                    </group>
+                    <notebook>
+                    <page string="Researches">
+                        <field name="research_directory_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="research_type_id"/>
+                                <field name="sample_type_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

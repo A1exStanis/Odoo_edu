@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_hospital_patient" model="ir.actions.act_window">
+        <field name="name">Hospital Patient</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create
+            </p>
+        </field>
+    </record>
+
+    <record id="view_hospital_patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree string="Hospital Patient">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="contact_person_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hospital_patient_form" model="ir.ui.view">
+        <field name="name">hospital.patient.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Hospital Patient">
+                <sheet>
+                    <group>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" class="oe_inline"/>
+                            </h1>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="photo" class="oe_inline"/>
+                        <field name="gender" class="oe_inline"/>
+                        <field name="birth_date" class="oe_inline"/>
+                        <field name="age" readonly="1" class="oe_inline"/>
+                    </group>
+                    <notebook>
+                        <page string="Private Information">
+                            <group>
+                                <field name="passport_number"/>
+                                <field name="contact_person_id"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="personal_doctor_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

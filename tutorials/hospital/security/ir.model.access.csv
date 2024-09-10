@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital_patient_user,access_hospital_patient_user,model_hospital_patient,base.group_user,1,1,1,1
+access_hospital_doctor_user,access_hospital_doctor_user,model_hospital_doctor,base.group_user,1,1,1,1
+access_diagnosis_user,access_diagnosis_user,model_hospital_diagnosis,base.group_user,1,1,1,1
+access_disease_directory_user,access_disease_directory_user,model_disease_directory,base.group_user,1,1,1,1
+access_disease_type_user,access_disease_type_user,model_disease_type,base.group_user,1,1,1,1
+access_contact_person_user,access_contact_person_user,model_contact_person,base.group_user,1,1,1,1
+access_doctor_visit_user,access_doctor_visit_user,model_doctor_visit,base.group_user,1,1,1,1
+access_doctor_assignment_history_user,access_doctor_visit_user,model_doctor_assignment_history,base.group_user,1,1,1,1
+access_specialty_type_user,access_specialty_type_user,model_specialty_type,base.group_user,1,1,1,1
+access_research_type_user,access_research_type_user,model_research_type,base.group_user,1,1,1,1
+access_research_directory_user,access_research_directory_user,model_research_directory,base.group_user,1,1,1,1
+access_sample_type_user,access_sample_type_user,model_sample_type,base.group_user,1,1,1,1
+access_doctor_schedule_user, access_doctor_schedule_user,model_doctor_schedule,base.group_user,1,1,1,1
