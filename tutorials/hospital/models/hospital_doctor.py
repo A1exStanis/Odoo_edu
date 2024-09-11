@@ -11,6 +11,8 @@ class HospitalDoctor(models.Model):
     is_intern = fields.Boolean(string='Intern', default=False)
     mentor_id = fields.Many2one('hospital.doctor',
                                 string='Mentor', domain="[('id', '!=', id)]")
+    schedule_ids = fields.One2many('doctor.schedule', 'doctor_id', string='Schedules')
+    visit_ids = fields.One2many('doctor.visit', 'doctor_id', string='Visits')
 
     @api.constrains('mentor_id')
     def _check_mentor(self):

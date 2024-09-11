@@ -23,6 +23,14 @@ class DoctorVisit(models.Model):
     @api.constrains('visit_date', 'visit_time')
     def _check_visit_time(self):
         for record in self:
+            schedule = self.env['doctor.schedule'].search([
+                ('doctor_id', '=', record.doctor_id.id),
+                ('schedule_date', '=', record.visit_date),
+                ('start_time', '<=', record.visit_time),
+                ('end_time', '>', record.visit_time)
+            ])
+            if not schedule:
+                raise ValidationError("The visit time does not fall within the doctor's available schedule.")
             if record.appointment_confirmed:
                 raise ValidationError("You cannot change the date/time or doctor for a confirmed appointment.")
 
@@ -51,12 +59,14 @@ class DoctorVisit(models.Model):
         return visit
 
     def write(self, vals):
+        if 'visit_time' in vals or 'doctor_id' in vals:
+            self._check_visit_time()
         if 'diagnosis_id' in vals:
             self._create_diagnosis_record(self)
         return super(DoctorVisit, self).write(vals)
 
     def unlink(self):
-        if any(self.search([('diagnosis_id', '!=', False)])):
+        if any(visit.diagnosis_id for visit in self):
             raise ValidationError("You cannot delete or archive visits that have associated diagnoses.")
         return super(DoctorVisit, self).unlink()
 

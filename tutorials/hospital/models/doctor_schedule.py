@@ -7,12 +7,12 @@ class DoctorSchedule(models.Model):
     _description = 'Doctor Schedule'
 
     doctor_id = fields.Many2one('hospital.doctor', string='Doctor', required=True)
-    date = fields.Date(string='Date', required=True)
-    start_time = fields.Float(string='Start Time', required=True)
-    end_time = fields.Float(string='End Time', required=True)
+    schedule_date = fields.Date(string='Date', required=True)
+    start_time = fields.Datetime(string='Start Time', required=True)
+    end_time = fields.Datetime(string='End Time', required=True)
 
     _sql_constraints = [
-        ('unique_schedule', 'unique(doctor_id, date, start_time, end_time)',
+        ('unique_schedule', 'UNIQUE(doctor_id, schedule_date, start_time, end_time)',
          'The schedule entry must be unique for the doctor on the given date and time.')
     ]
 
@@ -24,7 +24,7 @@ class DoctorSchedule(models.Model):
 
             overlapping_schedules = self.search([
                 ('doctor_id', '=', record.doctor_id.id),
-                ('date', '=', record.date),
+                ('schedule_date', '=', record.schedule_date),
                 ('id', '!=', record.id),
                 '|', ('start_time', '<', record.end_time), ('end_time', '>', record.start_time)
             ])
