@@ -16,7 +16,7 @@ class DoctorVisit(models.Model):
     appointment_confirmed = fields.Boolean(string='Appointment Confirmed', default=False)
 
     _sql_constraints = [
-        ('unique_appointment', 'unique(doctor_id, visit_date, visit_time)',
+        ('unique_appointment', 'UNIQUE(doctor_id, visit_date, visit_time)',
          'An appointment already exists for this doctor at this time.')
     ]
 
@@ -83,3 +83,29 @@ class DoctorVisit(models.Model):
             'doctor_visit_id': visit.id,
             'research_directory_ids': [(6, 0, visit.research_directory_ids.ids)],
         })
+
+    def action_create_visit(self):
+        self.ensure_one()
+        vals = {
+            'doctor_id': self.doctor_id.id,
+            'patient_id': self.id,
+            'visit_date': self.visit_date,
+            'visit_time': self.visit_time,
+        }
+        return self.create(vals)
+
+    def action_open_reschedule_wizard(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Reschedule Visit',
+            'res_model': 'reschedule.visit.wizard',
+            'view_mode': 'form',
+            'view_id': self.env.ref('hospital.view_reschedule_visit_wizard_form').id,
+            'target': 'new',
+            'context': {
+                'default_visit_id': self.id,
+                'default_doctor_id': self.doctor_id.id,
+                'default_visit_date': self.visit_date,
+                'default_visit_time': self.visit_time,
+            }
+        }

@@ -20,7 +20,9 @@
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="email"/>
+                <field name="age"/>
                 <field name="contact_person_id"/>
+                <button name="action_mass_assign_doctor" type="object" string="Mass Assign Doctor" class="btn-primary"/>
             </tree>
         </field>
     </record>
@@ -30,6 +32,9 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form string="Hospital Patient">
+                <header>
+                    <button name="action_schedule_visit" string="Schedule Appointment" type="object" class="btn-primary"/>
+                </header>
                 <sheet>
                     <group>
                         <div class="oe_title">

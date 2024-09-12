@@ -1,5 +1,7 @@
 from odoo import models, fields, api
 from datetime import date
+from odoo.exceptions import ValidationError
+
 
 
 class HospitalPatient(models.Model):
@@ -49,3 +51,31 @@ class HospitalPatient(models.Model):
                     'doctor_id': patient.personal_doctor_id.id,
                     'assignment_date': fields.Date.today()
                 })
+
+    def action_mass_assign_doctor(self):
+        return {
+            'name': 'Mass Assign Doctor',
+            'type': 'ir.actions.act_window',
+            'res_model': 'mass.assign.doctor.wizard',
+            'view_mode': 'form',
+            'view_id': self.env.ref('hospital.view_mass_assign_doctor_wizard').id,
+            'target': 'new',
+        }
+
+    def action_schedule_visit(self):
+        self.ensure_one()
+        if not self.personal_doctor_id:
+            raise ValidationError("Personal doctor must be set before scheduling a visit.")
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Schedule Visit',
+            'view_mode': 'form',
+            'view_id': self.env.ref('hospital.view_doctor_visit_form').id,
+            'res_model': 'doctor.visit',
+            'target': 'new',
+            'context': {
+                'default_doctor_id': self.personal_doctor_id.id,
+                'default_patient_id': self.id
+            }
+        }

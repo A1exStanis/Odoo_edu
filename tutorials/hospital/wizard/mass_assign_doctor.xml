@@ -1,0 +1,17 @@
+<odoo>
+    <record id="view_mass_assign_doctor_wizard" model="ir.ui.view">
+        <field name="name">mass.assign.doctor.wizard.form</field>
+        <field name="model">mass.assign.doctor.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Mass Assign Doctor">
+                <group>
+                    <field name="new_doctor_id"/>
+                </group>
+                <footer>
+                    <button string="Apply" type="object" name="assign_doctor" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

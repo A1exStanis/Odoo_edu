@@ -13,6 +13,8 @@ class HospitalDoctor(models.Model):
                                 string='Mentor', domain="[('id', '!=', id)]")
     schedule_ids = fields.One2many('doctor.schedule', 'doctor_id', string='Schedules')
     visit_ids = fields.One2many('doctor.visit', 'doctor_id', string='Visits')
+    diagnosis_ids = fields.One2many('hospital.diagnosis', 'doctor_id', string='Diagnosis')
+    doctor_history_ids = fields.One2many('doctor.assignment.history', 'doctor_id', string='Doctor Assignment History')
 
     @api.constrains('mentor_id')
     def _check_mentor(self):
