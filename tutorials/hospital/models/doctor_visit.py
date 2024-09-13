@@ -1,6 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
-
+from datetime import timedelta
 
 class DoctorVisit(models.Model):
     _name = 'doctor.visit'
@@ -109,3 +109,34 @@ class DoctorVisit(models.Model):
                 'default_visit_time': self.visit_time,
             }
         }
+
+    @api.onchange('doctor_id', 'visit_date')
+    def _onchange_doctor_date(self):
+        if self.doctor_id and self.visit_date:
+            available_times = self._get_available_times()
+            if available_times:
+                self.visit_time = available_times[0]  # Default to the first available time
+
+    def _get_available_times(self):
+        # Get the doctor's schedule for the selected date
+        schedule = self.env['doctor.schedule'].search([
+            ('doctor_id', '=', self.doctor_id.id),
+            ('schedule_date', '=', self.visit_date),
+        ])
+
+        # Get existing appointments
+        existing_visits = self.env['doctor.visit'].search([
+            ('doctor_id', '=', self.doctor_id.id),
+            ('visit_date', '=', self.visit_date),
+        ])
+
+        # Generate available time slots
+        available_times = []
+        for sch in schedule:
+            current_time = sch.start_time
+            while current_time < sch.end_time:
+                if not any(visit.visit_time == current_time for visit in existing_visits):
+                    available_times.append(current_time)
+                current_time += timedelta(minutes=30)  # Adjust the slot duration if needed
+
+        return available_times

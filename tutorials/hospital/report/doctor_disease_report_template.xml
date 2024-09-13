@@ -1,0 +1,36 @@
+<odoo>
+    <template id="report_disease_by_month">
+        <t t-call="web.html_container">
+            <div class="page">
+                <h2>Monthly Disease Report</h2>
+                <p><strong>Year:</strong> <t t-esc="doc['year']"/></p>
+                <p><strong>Month:</strong> <t t-esc="doc['month']"/></p>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Disease Name</th>
+                            <th>Number of Diagnoses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc['disease_ids']" t-as="disease">
+                            <tr>
+                                <td><t t-esc="disease['disease_id']['name']"/></td>
+                                <td><t t-esc="disease['count']"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <record id="report_disease_report" model="ir.actions.report">
+        <field name="name">Disease Report</field>
+        <field name="model">doctor.disease.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hospital.report_disease_by_month</field>
+        <field name="report_file">hospital.report_disease_by_month</field>
+        <field name="print_report_name">"Disease Report - %s" % (object.name)</field>
+    </record>
+</odoo>

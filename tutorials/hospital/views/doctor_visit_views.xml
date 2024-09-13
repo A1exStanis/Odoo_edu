@@ -36,9 +36,9 @@
                         </div>
                     </group>
                     <group>
-                        <field name="doctor_id" class="oe_inline"/>
+                        <field name="doctor_id" class="oe_inline" on_change="1"/>
                         <field name="patient_id" class="oe_inline"/>
-                        <field name="visit_date" class="oe_inline"/>
+                        <field name="visit_date" class="oe_inline" on_change="1"/>
                         <field name="visit_time" class="oe_inline"/>
                         <field name="diagnosis_id" class="oe_inline"/>
                         <field name="recommendations" class="oe_inline"/>

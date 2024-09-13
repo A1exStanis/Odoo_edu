@@ -1,0 +1,31 @@
+<odoo>
+
+    <record id="view_doctor_schedule_wizard_form" model="ir.ui.view">
+        <field name="name">doctor.schedule.wizard.form</field>
+        <field name="model">doctor.schedule.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Doctor Schedule Wizard">
+                <sheet>
+                    <group>
+                        <field name="doctor_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <group string="Even Week Schedule">
+                        <field name="even_week_start_time"/>
+                        <field name="even_week_end_time"/>
+                    </group>
+                    <group string="Odd Week Schedule">
+                        <field name="odd_week_start_time"/>
+                        <field name="odd_week_end_time"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Save" type="object" name="action_save_schedule" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

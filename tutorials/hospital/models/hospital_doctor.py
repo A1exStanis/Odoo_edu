@@ -28,3 +28,14 @@ class HospitalDoctor(models.Model):
         if record.is_intern and not record.mentor_id:
             raise ValidationError('Interns must have a mentor assigned.')
         return record
+
+    def action_open_schedule_wizard(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Set Doctor Schedule',
+            'view_mode': 'form',
+            'res_model': 'doctor.schedule.wizard',
+            'view_id': self.env.ref('hospital.view_doctor_schedule_wizard_form').id,
+            'target': 'new',
+            'context': {'default_doctor_id': self.id},
+        }

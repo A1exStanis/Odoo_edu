@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6de8399f-e73d-4764-9faa-49d4147a3daa" name="Changes" comment="Complete Task 3 (Add security)">
-      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/mass_assign_doctor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/mass_assign_doctor_wizard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/reschedule_visit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/reschedule_visit_wizard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/hospital/report/doctor_disease_report_template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/doctor_disease_report_wizard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/doctor_disease_report_wizard.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/doctor_schedule_wizard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/doctor_schedule_wizard.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/hospital/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/hospital/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/hospital/models/disease_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/models/disease_directory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/hospital/models/doctor_visit.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/models/doctor_visit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/hospital/models/hospital_doctor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/models/hospital_doctor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/hospital/models/hospital_patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/models/hospital_patient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/hospital/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/security/ir.model.access.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/hospital/views/doctor_visit_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/views/doctor_visit_views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorials/hospital/views/hospital_doctor_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/views/hospital_doctor_views.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorials/hospital/views/hospital_patient_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/views/hospital_patient_views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorials/hospital/wizard/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorials/hospital/wizard/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
